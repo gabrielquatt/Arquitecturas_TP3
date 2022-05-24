@@ -1,9 +1,7 @@
 package repositoryImp;
 
-import clases.Carrera;
 import clases.Estado;
 import repository.EstadoRepository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -28,15 +26,23 @@ public class EstadoRepositoryImp implements EstadoRepository {
      *
      * @param e {@link clases.Estado}
      */
-    @Override
-    public void InsertEstado(Estado e){
-        CreateEntityManager();
-        this.em.getTransaction().begin();
-        this.em.persist(e);
-        this.em.getTransaction().commit();
-        this.em.close();
-        this.emf.close();
-    }
+	@Override
+	public boolean InsertEstado(Estado e) {
+		CreateEntityManager();
+		// Estado s = null;//this.em.find(Estado.class, e.getId());
+		// buscar que exista carrera, que exista estudiante y que no exista ese estado
+		// previamente
+		//        if(s != null){
+		//            return false;
+		//        }else {
+		this.em.getTransaction().begin();
+		this.em.persist(e);
+		this.em.getTransaction().commit();
+		this.em.close();
+		this.emf.close();
+		return true;
+		// }
+	}
 
     @Override
     public List<Estado> GetEstados() {

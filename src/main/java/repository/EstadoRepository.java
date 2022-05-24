@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EstadoRepository {
 
-    void InsertEstado(Estado e);
+    boolean InsertEstado(Estado e);
 
     List<Estado> GetEstados();
 

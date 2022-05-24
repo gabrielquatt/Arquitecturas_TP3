@@ -76,8 +76,12 @@ public class Estado {
     public void setanioEgreso(LocalDate recibido) {
         this.anioEgreso = recibido;
     }
+    
+    public EstudianteCarreraPK getId() {
+		return id;
+	}
 
-    @Override
+	@Override
     public String toString() {
         return "Estado [carrera=" + carrera + ", estudiante=" + estudiante + ", año de ingreso=" + anioIngreso + ", anio que se recibio="
                 + anioEgreso + "]";

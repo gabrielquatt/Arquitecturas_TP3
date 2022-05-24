@@ -21,4 +21,17 @@ public class EstudianteRest {
         return imp.GetEstudianteRepository().GetEstudiantes();
     }
 
+    /**
+     * 2) dar de alta un estudiante
+     */
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String addEstudiante(Estudiante e){
+        boolean insert = imp.GetEstudianteRepository().InsertarEstudiante(e);
+        if(insert)
+            return "Estudiante Agregado Con Exito";
+        else
+            return "Error. No se pudo Agregar el Estudiante";
+    }
 }

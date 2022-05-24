@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EstudianteRepository {
 
-    void InsertarEstudiante(Estudiante e);
+	boolean InsertarEstudiante(Estudiante e);
 
     List<Estudiante> GetEstudiantes();
 

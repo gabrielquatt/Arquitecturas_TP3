@@ -35,13 +35,19 @@ public class EstudianteRepositoryImp implements EstudianteRepository {
      *
      */
     @Override
-    public void InsertarEstudiante(Estudiante e) {
+    public boolean InsertarEstudiante(Estudiante e) {
         CreateEntityManager();
-        this.em.getTransaction().begin();
-        this.em.persist(e);
-        this.em.getTransaction().commit();
-        this.em.close();
-        this.emf.close();
+        Estudiante s = this.em.find(Estudiante.class, e.getNum_Libreta());
+        if(s != null){
+            return false;
+        }else{
+        	this.em.getTransaction().begin();
+        	this.em.persist(e);
+        	this.em.getTransaction().commit();
+        	this.em.close();
+        	this.emf.close();
+        	return true;
+        }
     }
     /**
      * Devuelve la lista de estudiantes ordenados por nro de libreta

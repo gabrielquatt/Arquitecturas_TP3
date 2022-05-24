@@ -10,7 +10,6 @@
         <class>clases.Carrera</class>
         <class>clases.Estado</class>
         <class>clases.Estudiante</class>
-        <class>dto.ReporteCarreraDTO</class>
 
         <properties>
 

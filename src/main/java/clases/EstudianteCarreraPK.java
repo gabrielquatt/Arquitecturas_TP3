@@ -1,6 +1,7 @@
 package clases;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -39,4 +40,21 @@ public class EstudianteCarreraPK implements Serializable{
         this.c = c;
     }
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(c, e);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EstudianteCarreraPK other = (EstudianteCarreraPK) obj;
+		return c == other.c && e == other.e;
+	}
+    
 }
