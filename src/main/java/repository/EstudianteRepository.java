@@ -8,9 +8,11 @@ public interface EstudianteRepository {
 
 	boolean InsertarEstudiante(Estudiante e);
 
-    List<Estudiante> GetEstudiantes();
+	List<Estudiante> GetEstudiantes();
+	
+	List<Estudiante> GetEstudiantesOrderByNumLibretaDESC();
 
-    Estudiante GetEstudianteById(int id);
+	List<Estudiante> GetEstudianteById(int id);
 
     List<Estudiante> GetEstudiantesByGenero(String genero);
 

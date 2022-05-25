@@ -49,11 +49,23 @@ public class EstudianteRepositoryImp implements EstudianteRepository {
         	return true;
         }
     }
+    
+	@Override
+	public List<Estudiante> GetEstudiantes() {
+		 CreateEntityManager();
+	        this.em.getTransaction().begin();
+	        @SuppressWarnings("unchecked")
+	        List<Estudiante> list = em.createQuery("SELECT e FROM Estudiante e").getResultList();
+	        this.em.close();
+	        this.emf.close();
+	        return list;
+	}
+    
     /**
      * Devuelve la lista de estudiantes ordenados por nro de libreta
      */
     @Override
-    public List<Estudiante> GetEstudiantes() {
+    public List<Estudiante> GetEstudiantesOrderByNumLibretaDESC() {
         CreateEntityManager();
         this.em.getTransaction().begin();
         @SuppressWarnings("unchecked")
@@ -68,13 +80,14 @@ public class EstudianteRepositoryImp implements EstudianteRepository {
      * @return estudiante
      */
     @Override
-    public Estudiante GetEstudianteById(int id) {
+    public List<Estudiante> GetEstudianteById(int id) {
         CreateEntityManager();
         this.em.getTransaction().begin();
-        Estudiante e =	em.find(Estudiante.class, id);;
+        @SuppressWarnings("unchecked")
+		List<Estudiante> list =	em.createQuery("SELECT e FROM Estudiante e WHERE num_Libreta = ?1").setParameter(1, id).getResultList();
         this.em.close();
         this.emf.close();
-        return e;
+        return list;
     }
     /**
      * Devuelve una lista de estudiantes filtrada por genero
@@ -113,5 +126,6 @@ public class EstudianteRepositoryImp implements EstudianteRepository {
         this.emf.close();
         return list;
     }
+
 
 }

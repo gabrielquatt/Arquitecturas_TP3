@@ -14,11 +14,45 @@ public class EstudianteRest {
     public EstudianteRest() {
         imp = FactoryImp.GetFactory();
     }
-
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Estudiante> getStudentsOrderedBy(){
+    public List<Estudiante> getEstudiantes(){
         return imp.GetEstudianteRepository().GetEstudiantes();
+    }
+
+    /**
+     * 2) c)
+     * recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple.
+     * Ordenamiento DESC
+     * */
+    @GET
+    @Path("/orderByNumLibreta")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Estudiante> getEstudiantesOrderByNumLibreta(){
+        return imp.GetEstudianteRepository().GetEstudiantesOrderByNumLibretaDESC();
+    }
+    
+    /**
+     * 2) d)
+     * recuperar un estudiante, en base a su número de libreta universitaria.
+     * */
+    @GET
+    @Path("/LU:{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Estudiante> getEstudiantesByID(@PathParam("id") int id){
+        return imp.GetEstudianteRepository().GetEstudianteById(id);
+    }
+    
+    /**
+     * 2) d)
+     * recuperar un estudiante, en base a su número de libreta universitaria.
+     * */
+    @GET
+    @Path("/{gender}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Estudiante> getEstudiantesGenere(@PathParam("gender") String gender){
+        return imp.GetEstudianteRepository().GetEstudiantesByGenero(gender);
     }
 
     /**

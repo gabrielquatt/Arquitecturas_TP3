@@ -22,7 +22,15 @@ public class CarreraRest {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Carrera> getStudentsOrderedBy(){
+    public List<Carrera> getAllCarreras(){
         return imp.GetCarreraRepository().GetCarreras();
     }
+    
+    @GET
+    @Path("/OrdyByInscriptos")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Carrera> getCarrerasByInscriptos(){
+        return imp.GetCarreraRepository().GetCarrerasOrderByInscriptos();
+    }
+    
 }

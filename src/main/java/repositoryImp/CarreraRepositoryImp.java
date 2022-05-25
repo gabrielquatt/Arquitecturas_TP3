@@ -60,7 +60,8 @@ public class CarreraRepositoryImp implements CarreraRepository {
         this.emf  = Persistence.createEntityManagerFactory("Example");
         this.em = emf.createEntityManager();
         this.em.getTransaction().begin();
-        List<Carrera> list = em.createQuery("SELECT c FROM Carrera c ").getResultList();
+        @SuppressWarnings("unchecked")
+		List<Carrera> list = em.createQuery("SELECT c FROM Carrera c ").getResultList();
         this.em.close();
         return list;
     }
