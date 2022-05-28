@@ -31,17 +31,19 @@ public class EstadoRest {
         return imp.GetEstadoRepository().GetEstados();
     }
     
-//    /**
-//     * 2) matricular un estudiante en una carrera
-//     */
-//    @POST
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.TEXT_PLAIN)
-//    public String addEstado(Estado e){
-//        boolean insert = imp.GetEstadoRepository().InsertEstado(e);
-//        if(insert)
-//            return "Estudiante Agregado Con Exito A la Carrera";
-//        else
-//            return "Error. No se pudo Agregar el Estudiante a La Carrera";
-//    }
+    /**
+    * 2) matricular un estudiante en una carrera
+    * 
+    */
+   @POST
+   @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+   public String addEstado(Estado e){
+   	
+       boolean insert = imp.GetEstadoRepository().InsertEstado(e);
+       if(insert)
+           return "Estudiante Matriculado con exito";
+       else
+           return "Error. no se pudo matricular estudiante en la carrera";
+   }
 }

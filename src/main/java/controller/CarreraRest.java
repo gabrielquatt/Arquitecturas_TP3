@@ -3,6 +3,7 @@ package controller;
 
 import clases.Carrera;
 import clases.Estudiante;
+import dto.ReporteCarreraDTO;
 import factory.FactoryImp;
 
 import javax.ws.rs.GET;
@@ -31,6 +32,13 @@ public class CarreraRest {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Carrera> getCarrerasByInscriptos(){
         return imp.GetCarreraRepository().GetCarrerasOrderByInscriptos();
+    }
+    
+    @GET
+    @Path("/reporte-carreras")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<ReporteCarreraDTO> reporteCarreras(){
+        return imp.GetCarreraRepository().ReporteCarrera();
     }
     
 }
