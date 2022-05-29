@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   cargarOptionsCarreras('api/carreras');
-  cargarTablaEstudiantes('api/estudiantes');
+  cargarTablaEstudiantes('api/estudiantes'); 
 });
 function cargarOptionsCarreras(url){ 
 fetch(url, {
