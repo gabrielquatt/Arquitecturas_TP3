@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cargarOptionsCarreras(url){ 
+// console.log(url);
 fetch(url, {
   method: 'GET',
   mode: 'cors'
@@ -19,12 +20,13 @@ fetch(url, {
     }
 })
 .then(function(carreras){
+    console.log(carreras);
     let lista = document.querySelector("#listaCarreras");
     lista.innerHTML = "";
     carreras.forEach(function(carrera){ 
         let li = document.createElement('li');
         li.innerHTML= carrera.nombre;
-        li.value = carrera.id;
+        // li.setAttribute('data-value', carrera.id);
         lista.appendChild(li);
     });
 })

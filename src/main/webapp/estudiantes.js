@@ -5,21 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarTablaEstudiantes('api/estudiantes/orderByNumLibreta');
   });
   
-  document.querySelector('#filtar').addEventListener('click', () => {
+  document.querySelector('#filtrar').addEventListener('click', () => {
     let filtroUrl;
-    let tipoFiltro=  document.querySelector('#select_filtrarpor').value;
+    let tipoFiltro = document.querySelector('#estudiantes-select_filtrarpor').value;
     switch(tipoFiltro){
         case 'GENERO':
-            filtroUrl = 'api/estudiantes/'.document.querySelector('#estudiantes-select_genero').value; 
+            filtroUrl = 'api/estudiantes/'+document.querySelector('#estudiantes-select_genero').value;
         break;
         case 'CARRERA_Y_RESIDENCIA':
-            filtroUrl = 'api/estudiantes/'.document.querySelector('#estudiantes-select_carrera').value+'/'.document.querySelector('#estudiantes-input_nombre_residencia').value; 
+            filtroUrl = 'api/estudiantes/'+document.querySelector('#estudiantes-select_carrera').value+'/'+document.querySelector('#estudiantes-input_nombre_residencia').value; 
         break;
         default:
             filtroUrl = 'api/estudiantes';
 
     }
-    cargarTablaEstudiantes('filtroUrl');
+    console.log(filtroUrl);
+    cargarTablaEstudiantes(filtroUrl);
   });
 });
 

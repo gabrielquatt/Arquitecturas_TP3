@@ -16,6 +16,7 @@ function cargarTablaCarreras(url){
     }
 })
 .then(function(carreras){
+    console.log(carreras);
     let tabla = document.getElementById("tablaCarreras");
     while ((tabla.rows.length - 1) > 0)
     {
@@ -31,24 +32,24 @@ function cargarTablaCarreras(url){
   });    
 }
 
-function cargarEstudiante(carrera) {
+function cargarCarrera(carrera) {
 // Recibe la direccion de la tabla y crea una fila siempre al final    
 let tabla = document.getElementById("tablaCarreras");
 let fila = tabla.insertRow(-1);
 //TD NOMBRE CARRERA
 let nombre= document.createElement("td");
-nombre.textContent = carrera.nombre; 
+nombre.textContent = carrera.nombre_Carrera; 
 fila.appendChild(nombre);
 //TD ANIO
 let anio = document.createElement("td");
-anio.textContent =carrera.anio ; 
+anio.textContent =carrera.anio; 
 fila.appendChild(anio);
 //TD CANTIDAD INGRESADOS
 let cantIngresados = document.createElement("td");
-cantIngresados.textContent =carrera.cantIngresados; 
+cantIngresados.textContent =carrera.incriptos; 
 fila.appendChild(cantIngresados);
 //TD CANTIDAD EGRESADOS
 let cantEgresados= document.createElement("td");
-cantEgresados.textContent =carrera.cantEgresados;
+cantEgresados.textContent =carrera.egresados;
 fila.appendChild(cantEgresados);
 }
