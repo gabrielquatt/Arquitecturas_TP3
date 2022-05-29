@@ -38,7 +38,7 @@ public class EstudianteRest {
      * recuperar un estudiante, en base a su número de libreta universitaria.
      * */
     @GET
-    @Path("/LU:{id}")
+    @Path("/LU/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Estudiante> getEstudiantesByID(@PathParam("id") int id){
         return imp.GetEstudianteRepository().GetEstudianteById(id);

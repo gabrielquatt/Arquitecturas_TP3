@@ -1,0 +1,1 @@
+const NOMBRE_PROYECTO = 'Arquitecturas_TP3';

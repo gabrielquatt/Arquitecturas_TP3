@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Arquitecturas Web: TP Integrador 3</title>
+</head>
+<body>
+  <div class="d-flex flex-column justify-content-start align-items-center" style="width: 100vw; height: 100vh; padding: 1em;">
+
+    <a class="button btn-3d rounded btn-warning p-1 my-1" href="agregar.html">Agregar estudiante...</a>
+
+    <div class="d-flex flex-row justify-content-center my-1">
+      <h5 style="width: 25%">FILTRAR POR:</h5>
+      <select class="form-control mx-1" name="estudiantes-select_genero" id="estudiantes-select_filtrarpor" style="height: 3em">
+        <option class="estudiantes-select_filtrarpor-option" value="GENERO">GÉNERO</option>
+        <option class="estudiantes-select_filtrarpor-option" value="CARRERA_Y_RESIDENCIA">CARRERA Y RESIDENCIA</option>
+      </select>
+    </div>
+    <div class="d-flex flex-row justify-content-center align-items-center my-1">
+      <div hidden id="estudiantes-div_select_genero">
+        <label for="estudiantes-select_genero">Género</label>
+        <select class="form-control mx-1" name="estudiantes-select_genero" id="estudiantes-select_genero" style="height: 3em">
+          <option class="estudiantes-select_genero-option" value="male">MASCULLINO</option>
+          <option class="estudiantes-select_genero-option" value="female">FEMENINO</option>
+          <option class="estudiantes-select_genero-option" value="bigender">BIGÉNERO</option>
+          <option class="estudiantes-select_genero-option" value="agender">AGÉNERO</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="estudiantes-div_selects_carrera_residencia">
+      <div class="d-flex flex-row justify-content-around align-items-center my-1" style="width: 100%">
+        <div class="d-flex flex-column" style="width: 25%">
+          <label for="estudiantes-select_carrera">Carrera</label>
+          <select class="form-control" name="estudiantes-select_carrera" id="estudiantes-select_carrera"></select>
+        </div>
+        <div class="d-flex flex-column" style="width: 25%">
+          <label for="estudiantes-input_nombre_residencia">Residencia</label>
+          <input type="text" class="form-control" name="estudiantes-input_nombre_residencia" id="estudiantes-input_nombre_residencia"></input>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-dark table-striped" id="tablaEstudiantes">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Género</th>
+          <th scope="col">x</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Pepe</td>
+          <td>Unicen</td>
+          <td>69</td>
+          <td>No Binario</td>
+          <td><a href="#" class="btn btn-3d btn-primary">Ver más</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="estudiantes.js"></script>
+
+</body>
+</html>
