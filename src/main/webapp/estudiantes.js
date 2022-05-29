@@ -1,7 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   cargarOptionsCarreras('api/carreras');
   cargarTablaEstudiantes('api/estudiantes');
+  document.querySelector('#ordenar').addEventListener('click', () => {
+    cargarTablaEstudiantes('api/estudiantes/orderByNumLibreta');
+  });
+  
+  document.querySelector('#filtar').addEventListener('click', () => {
+    let filtroUrl;
+    let tipoFiltro=  document.querySelector('#select_filtrarpor').value;
+    switch(tipoFiltro){
+        case 'GENERO':
+            filtroUrl = 'api/estudiantes/'.document.querySelector('#estudiantes-select_genero').value; 
+        break;
+        case 'CARRERA_Y_RESIDENCIA':
+            filtroUrl = 'api/estudiantes/'.document.querySelector('#estudiantes-select_carrera').value+'/'.document.querySelector('#estudiantes-input_nombre_residencia').value; 
+        break;
+        default:
+            filtroUrl = 'api/estudiantes';
+
+    }
+    cargarTablaEstudiantes('filtroUrl');
+  });
 });
+
 function cargarOptionsCarreras(url){ 
 fetch(url, {
   method: 'GET',

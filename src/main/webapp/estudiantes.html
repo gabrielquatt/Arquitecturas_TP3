@@ -8,6 +8,8 @@
   <title>Arquitecturas Web: TP Integrador 3</title>
 </head>
 <body>
+  <button id="filtrar">Filtrar</button>
+  <button id="ordenar"> Ordenar por # DES</button>
   <div class="d-flex flex-column justify-content-start align-items-center" style="width: 100vw; height: 100vh; padding: 1em;">
 
     <a class="button btn-3d rounded btn-warning p-1 my-1" href="agregar.html">Agregar estudiante...</a>
@@ -15,12 +17,13 @@
     <div class="d-flex flex-row justify-content-center my-1">
       <h5 style="width: 25%">FILTRAR POR:</h5>
       <select class="form-control mx-1" name="estudiantes-select_genero" id="estudiantes-select_filtrarpor" style="height: 3em">
+        <option selected="selected" class="estudiantes-select_filtrarpor-option" value="---"></option>
         <option class="estudiantes-select_filtrarpor-option" value="GENERO">GÉNERO</option>
         <option class="estudiantes-select_filtrarpor-option" value="CARRERA_Y_RESIDENCIA">CARRERA Y RESIDENCIA</option>
       </select>
     </div>
     <div class="d-flex flex-row justify-content-center align-items-center my-1">
-      <div hidden id="estudiantes-div_select_genero">
+      <div id="estudiantes-div_select_genero">
         <label for="estudiantes-select_genero">Género</label>
         <select class="form-control mx-1" name="estudiantes-select_genero" id="estudiantes-select_genero" style="height: 3em">
           <option class="estudiantes-select_genero-option" value="male">MASCULLINO</option>
@@ -43,7 +46,7 @@
         </div>
       </div>
     </div>
-
+    
     <table class="table table-dark table-striped" id="tablaEstudiantes">
       <thead>
         <tr>
