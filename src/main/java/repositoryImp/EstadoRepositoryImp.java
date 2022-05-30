@@ -56,10 +56,10 @@ public class EstadoRepositoryImp implements EstadoRepository {
     @Override
     public List<Estado> GetEstados() {
         CreateEntityManager();
-        this.emf  = Persistence.createEntityManagerFactory("Example");
-        this.em = emf.createEntityManager();
+        // this.emf  = Persistence.createEntityManagerFactory("Example");
+        // this.em = emf.createEntityManager();
         this.em.getTransaction().begin();
-        List<Estado> list = em.createQuery("SELECT e FROM Estado e ").getResultList();
+        List<Estado> list = em.createQuery("SELECT e, e.anioEgreso AS anioEgreso FROM Estado e ").getResultList();
         this.em.close();
         return list;
     }

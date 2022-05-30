@@ -44,11 +44,25 @@ function get(name){
 }
 
 function matricularEstudiante (url){
-  let today = new Date();
+  let anioIngreso = new Date();
+  let anioEgreso = new Date();
+  anioIngreso = document.querySelector('#estudiantes-anioIngreso').value;
+  anioEgreso = document.querySelector('#estudiantes-anioEgreso').value;
   let estadoNuevo = {
-      'carrera': document.querySelector('#form_agregar_estudiante-num_Libreta').value,
-      'estudiante': get('LU'),
-      'anioIngreso': String(today.getDate()).padStart(2, '0') + '/' + String(today.getMonth() + 1).padStart(2, '0') + '/' + today.getFullYear(),
+      'carrera': {
+        'id': document.querySelector('#estudiantes-select_carrera').value,
+        'nombre': document.querySelector('#estudiantes-select_carrera').options[document.querySelector('#estudiantes-select_carrera').selectedIndex].text
+      },
+      'estudiante': {
+        "num_Libreta": document.querySelector('#num_Libreta').innerHTML,
+        "num_doc": document.querySelector('#num_doc').innerHTML,
+        "apellido": document.querySelector('#apellido').innerHTML,
+        "edad": document.querySelector('#edad').innerHTML,
+        "genero": document.querySelector('#genero').innerHTML,
+        "residencia": document.querySelector('#residencia').innerHTML,
+        "nombres": document.querySelector('#nombres').innerHTML
+      },
+      'anioIngreso': null,
       'anioEgreso': null
   };
 
@@ -93,7 +107,7 @@ function cargarOptionsCarreras(url){
       carreras.forEach(function(carrera){ 
           let option= document.createElement('option');
           option.innerHTML= carrera.nombre;
-          option.value = carrera.nombre;
+          option.value = carrera.id;
           selector.appendChild(option);
       });
   })

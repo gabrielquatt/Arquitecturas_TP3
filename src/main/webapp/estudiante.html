@@ -29,9 +29,19 @@
   <h4>Residencia:</h4>
   <p id="residencia"></p>
   <form method="POST">
-    <div class="d-flex flex-column" style="width: 25%">
-      <label for="estudiantes-select_carrera">Carrera</label>
-      <select class="form-control" name="estudiantes-select_carrera" id="estudiantes-select_carrera"></select>
+    <div class="d-flex flex-row justify-content-around" style="width: 62.5vw">
+      <div class="d-flex flex-column" style="width: 30%">
+        <label for="estudiantes-select_carrera">Carrera</label>
+        <select class="form-control" name="estudiantes-select_carrera" id="estudiantes-select_carrera"></select>
+      </div>
+      <div class="d-flex flex-column" style="width: 30%">
+        <label for="estudiantes-anioIngreso">Año ingreso</label>
+        <input type="date" class="form-control" id="estudiantes-anioIngreso"></input>
+      </div>
+      <div class="d-flex flex-column" style="width: 30%">
+        <label for="estudiantes-anioEgreso">Año egreso</label>
+        <input type="date" class="form-control" id="estudiantes-anioEgreso"></input>
+      </div>
     </div>
     <button type="submit" id="matricular">Matricular</button>
   </form>

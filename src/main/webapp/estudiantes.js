@@ -43,7 +43,7 @@ fetch(url, {
     carreras.forEach(function(carrera){ 
         let option= document.createElement('option');
         option.innerHTML= carrera.nombre;
-        option.value = carrera.nombre;
+        option.value = carrera.id;
         selector.appendChild(option);
     });
 })

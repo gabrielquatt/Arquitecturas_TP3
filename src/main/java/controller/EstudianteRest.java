@@ -45,8 +45,8 @@ public class EstudianteRest {
     }
     
     /**
-     * 2) d)
-     * recuperar un estudiante, en base a su número de libreta universitaria.
+     * 2) e)
+     * recuperar los estudiantes en base a su género
      * */
     @GET
     @Path("/{gender}")
@@ -56,7 +56,18 @@ public class EstudianteRest {
     }
 
     /**
-     * 2) dar de alta un estudiante
+     * 2) g)
+     * recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
+     * */
+    @GET
+    @Path("/{ciudad}/{carrera}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Estudiante> getEstudiantesByCiudadAndCarrera(@PathParam("ciudad") String ciudad, @PathParam("carrera") int idarrera){
+        return imp.GetEstudianteRepository().GetEstudiantesByCiudad(ciudad, idarrera);
+    }
+
+    /**
+     * 2) a) dar de alta un estudiante
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
