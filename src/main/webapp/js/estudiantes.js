@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filtroUrl = 'api/estudiantes/'+document.querySelector('#estudiantes-select_genero').value;
         break;
         case 'CARRERA_Y_RESIDENCIA':
-            filtroUrl = 'api/estudiantes/'+document.querySelector('#estudiantes-select_carrera').value+'/'+document.querySelector('#estudiantes-input_nombre_residencia').value; 
+            filtroUrl = 'api/estudiantes/'+document.querySelector('#estudiantes-input_nombre_residencia').value+'/'+document.querySelector('#estudiantes-select_carrera').value; 
         break;
         default:
             filtroUrl = 'api/estudiantes';
