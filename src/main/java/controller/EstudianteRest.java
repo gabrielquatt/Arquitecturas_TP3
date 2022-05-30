@@ -62,7 +62,7 @@ public class EstudianteRest {
     @GET
     @Path("/{ciudad}/{idcarrera}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Estudiante> getEstudiantesByCiudadAndCarrera(@PathParam("ciudad") String ciudad, @PathParam("idcarrera") int carrera){
+    public List<Estudiante> getEstudiantesByCiudadAndCarrera(@PathParam("ciudad") String ciudad, @PathParam("idcarrera") int idcarrera){
         return imp.GetEstudianteRepository().GetEstudiantesByCiudad(ciudad, idcarrera);
     }
 
