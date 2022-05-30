@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  console.log('sasarasa EEEEEEEEEEEEEEEEEEEEEEEEEEE');
-
   document.querySelector('#form_agregar_estudiante-boton_agregar').addEventListener('click', (event) => {
     event.preventDefault();
     agregarEstudiante('/'+NOMBRE_PROYECTO+'/api/estudiantes');
     // JARCODEADO PORQUE SI USAMOS LA CONSTANTE LA INCLUYE DOS VECES
     // Qué lindo es JavaScript 🙃
   });
-
 });
 
+/**
+ * 
+ * @param {*} url 
+ * Obtiene del formulario y los envia hacia la url
+ */
 function agregarEstudiante (url){
   let estudianteNuevo = {
       'num_Libreta': document.querySelector('#form_agregar_estudiante-num_Libreta').value,
@@ -21,9 +22,6 @@ function agregarEstudiante (url){
       'genero': document.querySelector('#form_agregar_estudiante-genero').value,
       'residencia': document.querySelector('#form_agregar_estudiante-residencia').value
   };
-
-  console.log(estudianteNuevo);
-
   // Escribe el objeto en el JSON del servidor
   fetch((url), {
       'method': 'POST',

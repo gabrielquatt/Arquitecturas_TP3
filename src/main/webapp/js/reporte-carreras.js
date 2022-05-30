@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   cargarTablaCarreras('api/carreras/reporte-carreras');
 });
 
+/**
+ * 
+ * @param {*} url 
+ * Obtiene los datos de la url y la carga en la tabla de carreras
+ */
 function cargarTablaCarreras(url){ 
   fetch(url, {
     method: 'GET',
@@ -32,6 +37,11 @@ function cargarTablaCarreras(url){
   });    
 }
 
+/**
+ * 
+ * @param {*} carrera
+ * Crea una nueva fila en la tabla de carreras
+ */
 function cargarCarrera(carrera) {
 // Recibe la direccion de la tabla y crea una fila siempre al final    
 let tabla = document.getElementById("tablaCarreras");

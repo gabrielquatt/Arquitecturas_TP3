@@ -5,8 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/**
+ * 
+ * @param {*} url
+ * Obtiene los datos de la url y la carga en lista de carreras
+ */
 function cargarOptionsCarreras(url){ 
-// console.log(url);
 fetch(url, {
   method: 'GET',
   mode: 'cors'
@@ -26,7 +30,6 @@ fetch(url, {
     carreras.forEach(function(carrera){ 
         let li = document.createElement('li');
         li.innerHTML= carrera.nombre;
-        // li.setAttribute('data-value', carrera.id);
         lista.appendChild(li);
     });
 })

@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   cargarTablaEstados('api/estados');
 });
 
+/**
+ * 
+ * @param {*} url 
+ * Obtiene los datos de la url y la carga en la tabla de estados
+ */
 function cargarTablaEstados(url){
   fetch(url, {
       method: 'GET',
@@ -30,6 +35,11 @@ function cargarTablaEstados(url){
     });    
 }
 
+/**
+ * 
+ * @param {*} estado
+ * Crea una nueva fila en la tabla de estados 
+ */
 function cargarEstado(estado) {
     // Recibe la direccion de la tabla y crea una fila siempre al final    
     let tabla = document.getElementById("tablaEstados");
@@ -47,10 +57,10 @@ function cargarEstado(estado) {
     fila.appendChild(carrera);
     //TD ANIO INGRESO
     let anioIngreso = document.createElement("td");
-    anioIngreso.textContent = estado.anioIngreso; 
+    anioIngreso.textContent =  (estado.anioIngreso !== null) ? estado.anioIngreso: " - ";
     fila.appendChild(anioIngreso);
     //TD ANIO EGRESO
     let anioEgreso = document.createElement("td");
-    anioEgreso.textContent = estado.anioEgreso;
+    anioEgreso.textContent = (estado.anioEgreso !== null) ? estado.anioEgreso : " - ";
     fila.appendChild(anioEgreso);
 }

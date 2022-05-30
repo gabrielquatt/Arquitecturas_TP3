@@ -1,6 +1,5 @@
 window.addEventListener('load', () => {
   let lu = get('LU');
-  console.log(lu);
   estudianteLU('api/estudiantes/LU/'+lu);
   cargarOptionsCarreras('api/carreras');
   document.querySelector('#matricular').addEventListener('click', (event) => {
@@ -11,6 +10,11 @@ window.addEventListener('load', () => {
   });
 });
 
+/**
+ * 
+ * @param {*} url
+ * Obtiene los datos de la url y la carga en los parrafos
+ */
 function estudianteLU(url){ 
   fetch(url, {
     method: 'GET',
@@ -38,6 +42,12 @@ function estudianteLU(url){
     });    
 }
 
+/**
+ * 
+ * @param {*} name 
+ * @returns String
+ * Devuelve el valor del atribuito a buscar
+ */
 function get(name){
   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
      return decodeURIComponent(name[1]);
@@ -88,6 +98,11 @@ function matricularEstudiante (url){
   .catch(exception => console.log(exception));
 }
 
+/**
+ * 
+ * @param {*} url 
+ * Obtiene los datos de la url y la carga en las opciones del selector de carreras
+ */
 function cargarOptionsCarreras(url){ 
   fetch(url, {
     method: 'GET',

@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarTablaEstudiantes('api/estudiantes/orderByNumLibreta');
   });
   
+  /**
+   * Carga un conjunto de estudiantes dependiendo del valor del selector de filtro
+   */
   document.querySelector('#filtrar').addEventListener('click', () => {
     let filtroUrl;
     let tipoFiltro = document.querySelector('#estudiantes-select_filtrarpor').value;
@@ -24,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/**
+ * 
+ * @param {*} url 
+ * Obtiene los datos de la url y la carga en las opciones del selector de carreras
+ */
 function cargarOptionsCarreras(url){ 
 fetch(url, {
   method: 'GET',
@@ -52,6 +60,11 @@ fetch(url, {
   });    
 }
 
+/**
+ * 
+ * @param {*} url 
+ * Obtiene los datos de la url y la carga en la tabla de estudiantes
+ */
 function cargarTablaEstudiantes(url){
   fetch(url, {
       method: 'GET',
@@ -81,6 +94,11 @@ function cargarTablaEstudiantes(url){
     });    
 }
 
+/**
+ * 
+ * @param {*} estudiante
+ * Crea una nueva fila en la tabla de estudiantes
+ */
 function cargarEstudiante(estudiante) {
   // Recibe la direccion de la tabla y crea una fila siempre al final    
   let tabla = document.getElementById("tablaEstudiantes");

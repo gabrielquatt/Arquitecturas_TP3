@@ -60,10 +60,10 @@ public class EstudianteRest {
      * recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
      * */
     @GET
-    @Path("/{ciudad}/{carrera}")
+    @Path("/{ciudad}/{idcarrera}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Estudiante> getEstudiantesByCiudadAndCarrera(@PathParam("ciudad") String ciudad, @PathParam("carrera") int carrera){
-        return imp.GetEstudianteRepository().GetEstudiantesByCiudad(ciudad, carrera);
+    public List<Estudiante> getEstudiantesByCiudadAndCarrera(@PathParam("ciudad") String ciudad, @PathParam("idcarrera") int carrera){
+        return imp.GetEstudianteRepository().GetEstudiantesByCiudad(ciudad, idcarrera);
     }
 
     /**
