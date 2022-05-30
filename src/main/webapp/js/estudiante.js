@@ -72,8 +72,9 @@ function matricularEstudiante (url){
         "residencia": document.querySelector('#residencia').innerHTML,
         "nombres": document.querySelector('#nombres').innerHTML
       },
-      'anioIngreso': null,
-      'anioEgreso': null
+      // LAS FECHAS SE ENVÍAN COMO STRING EN FORMATO "YYYY-MM-DD"
+      'anioIngreso': document.querySelector('#estudiantes-anioIngreso').value,
+      'anioEgreso': document.querySelector('#estudiantes-anioEgreso').value
   };
 
   console.log(estadoNuevo);

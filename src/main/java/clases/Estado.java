@@ -5,6 +5,8 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Estado {
 
@@ -18,9 +20,11 @@ public class Estado {
     private Estudiante estudiante;//FK
 
     @Column
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate anioIngreso;
 
     @Column
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate anioEgreso;
 
     public Estado() {

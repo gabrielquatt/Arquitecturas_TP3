@@ -59,7 +59,7 @@ public class EstadoRepositoryImp implements EstadoRepository {
         // this.emf  = Persistence.createEntityManagerFactory("Example");
         // this.em = emf.createEntityManager();
         this.em.getTransaction().begin();
-        List<Estado> list = em.createQuery("SELECT e, e.anioEgreso AS anioEgreso FROM Estado e ").getResultList();
+        List<Estado> list = em.createQuery("SELECT e FROM Estado e ").getResultList();
         this.em.close();
         return list;
     }
