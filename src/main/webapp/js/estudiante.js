@@ -119,7 +119,6 @@ function cargarOptionsCarreras(url){
   })
   .then(function(carreras){
       let selector = document.querySelector("#estudiantes-select_carrera");
-      selector.innerHTML = "";
       carreras.forEach(function(carrera){ 
           let option= document.createElement('option');
           option.innerHTML= carrera.nombre;
