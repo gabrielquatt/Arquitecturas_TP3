@@ -38,7 +38,7 @@ public class main {
         /**
          * Cargar tablas en la DB MYSQL
          */
-        //LoadCSV(f);
+        LoadCSV(f);
 
         // c) recuperar todos los estudiantes, y especificar alg�n criterio de
         // ordenamiento simple.
