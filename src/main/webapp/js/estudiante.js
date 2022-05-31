@@ -54,13 +54,15 @@ function get(name){
 }
 
 function matricularEstudiante (url){
-  let anioIngreso = new Date();
-  let anioEgreso = new Date();
-  anioIngreso = document.querySelector('#estudiantes-anioIngreso').value;
-  anioEgreso = document.querySelector('#estudiantes-anioEgreso').value;
+  let carrera =document.querySelector('#estudiantes-select_carrera').value;
+  if(carrera === "") {return;}
   let estadoNuevo = {
+      'id': {
+        'c': carrera,
+        'e': document.querySelector('#num_Libreta').innerHTML
+      },
       'carrera': {
-        'id': document.querySelector('#estudiantes-select_carrera').value,
+        'id': carrera,
         'nombre': document.querySelector('#estudiantes-select_carrera').options[document.querySelector('#estudiantes-select_carrera').selectedIndex].text
       },
       'estudiante': {
@@ -72,9 +74,10 @@ function matricularEstudiante (url){
         "residencia": document.querySelector('#residencia').innerHTML,
         "nombres": document.querySelector('#nombres').innerHTML
       },
-      // LAS FECHAS SE ENVÍAN COMO STRING EN FORMATO "YYYY-MM-DD"
-      'anioIngreso': document.querySelector('#estudiantes-anioIngreso').value,
-      'anioEgreso': document.querySelector('#estudiantes-anioEgreso').value
+      // LAS FECHAS SE ENVÍAN COMO STRING EN FORMATO "yyyy-MM-dd"
+      'anioIngreso':new Date().toLocaleDateString("fr-CA"),
+      'anioEgreso': null
+      
   };
 
   console.log(estadoNuevo);
@@ -89,13 +92,14 @@ function matricularEstudiante (url){
       'body': JSON.stringify(estadoNuevo)
   })
   .then(function (respuesta) {
-      if (respuesta.ok) {         
-          alert('¡Estudiante ha sido matricul@ con éxito!');
+      if (respuesta.ok) { 
+        return respuesta.text(); 
       }
       else {
-          alert("La solicitud al servidor falló.");            
+          alert("No se pudo conectar al servidor");            
       }
   })
+  .then(function (res){alert(res);})
   .catch(exception => console.log(exception));
 }
 
