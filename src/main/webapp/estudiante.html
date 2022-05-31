@@ -8,25 +8,26 @@
   <title>Arquitecturas Web: TP Integrador 3</title>
 </head>
 <body>
-  <h4>Nro. Libreta:</h4>
+  <a href="index.jsp" >Volver al index</a>
+  <h5>Nro. Libreta:</h5>
   <p id="num_Libreta"></p><br>
   
-  <h4>Nro. Documento:</h4>
+  <h5>Nro. Documento:</h5>
   <p id="num_doc"></p><br>
   
-  <h4>Apellido:</h4>
+  <h5>Apellido:</h5>
   <p id="apellido"></p><br>
   
-  <h4>Nombre:</h4>
+  <h5>Nombre:</h5>
   <p id="nombres"></p><br>
   
-  <h4>Edad:</h4>
+  <h5>Edad:</h5>
   <p id="edad"></p><br>
   
-  <h4>Género:</h4>
+  <h5>Género:</h5>
   <p id="genero"></p><br>
   
-  <h4>Residencia:</h4>
+  <h5>Residencia:</h5>
   <p id="residencia"></p>
   <form method="POST">
     <div class="d-flex flex-row justify-content-around" style="width: 62.5vw">
@@ -36,8 +37,9 @@
           <option selected="selected" value="">Elige una carrera</option>
         </select>
       </div>
+      <button type="submit" class="btn btn-primary" id="matricular">Matricular</button>
     </div>
-    <button type="submit" id="matricular">Matricular</button>
+    
   </form>
   
   <script type="text/javascript" src="js/estudiante.js"></script>
