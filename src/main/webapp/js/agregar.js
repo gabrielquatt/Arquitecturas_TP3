@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     agregarEstudiante('/'+NOMBRE_PROYECTO+'/api/estudiantes');
     // JARCODEADO PORQUE SI USAMOS LA CONSTANTE LA INCLUYE DOS VECES
-    // Qué lindo es JavaScript 🙃
   });
 });
 

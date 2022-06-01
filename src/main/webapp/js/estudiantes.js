@@ -132,6 +132,8 @@ function cargarEstudiante(estudiante) {
   let ver_columna = document.createElement("td");
   let ver_a = document.createElement("a");
   ver_a.href = "estudiante.html?LU="+estudiante.num_Libreta;
+  ver_a.classList.add('btn');
+  ver_a.classList.add('btn-primary');
   ver_a.appendChild(document.createTextNode("Ver Más"));
   ver_columna.appendChild(ver_a);
   fila.appendChild(ver_columna);

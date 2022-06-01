@@ -31,7 +31,7 @@ function cargarTablaEstados(url){
       });
   })
   .catch(function(error) {
-      console.log("Hubo un problema con la peticiÃ³n Fetch:" + error.message);
+      console.log("Hubo un problema con la petición Fetch:" + error.message);
     });    
 }
 
@@ -48,6 +48,7 @@ function cargarEstado(estado) {
     let libreta= document.createElement("td");
     let estudiante = document.createElement("a");
     estudiante.href = "estudiante.html?LU="+estado.estudiante.num_Libreta; 
+    estudiante.classList.add('text-warning');
     estudiante.appendChild(document.createTextNode(estado.estudiante.num_Libreta));
     libreta.appendChild(estudiante);
     fila.appendChild(libreta);

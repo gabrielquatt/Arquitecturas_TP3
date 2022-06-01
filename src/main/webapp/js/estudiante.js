@@ -5,8 +5,6 @@ window.addEventListener('load', () => {
   document.querySelector('#matricular').addEventListener('click', (event) => {
     event.preventDefault();
     matricularEstudiante('/'+NOMBRE_PROYECTO+'/api/estados');
-    // JARCODEADO PORQUE SI USAMOS LA CONSTANTE LA INCLUYE DOS VECES
-    // Qué lindo es JavaScript 🙃
   });
 });
 
